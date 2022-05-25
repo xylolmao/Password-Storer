@@ -22,12 +22,12 @@ try:
 except:
     pass
     
-def randompass():
+def randompass() -> str:
     chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890:;./><'@]}[{=+-_)(*&^%$£!"
     ranpass = ''.join(random.sample(chars, 27))
     return ranpass
     
-def viewenc():
+def viewenc() -> None:
     if os.path.exists(adir + "\\encinfo.txt"):
         with open(adir + "\\encinfo.txt", "r") as encdata:
             for line in encdata:
@@ -43,7 +43,7 @@ def viewenc():
     else:
         raise FileNotFoundError(f"Decrypted File Doesn't Exist -> Try Using [python {__file__}.py add] First!")
     
-def viewdec():
+def viewdec() -> None:
     if os.path.exists(adir + "\\decinfo.txt"):
         with open(adir + "\\decinfo.txt", "r") as decdata:
             for line in decdata:
@@ -98,7 +98,7 @@ try:
         for a in args:
             print(a)
         os._exit(0)
-except Exception as e:
-    print(e)
+except:
+    pass
 
         
